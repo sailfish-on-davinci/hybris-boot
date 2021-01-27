@@ -1399,7 +1399,6 @@ case "$DEVICE" in
             -e 's block/bootdevice/by-name/system mmcblk0p86 ' \
             -e 's block/bootdevice/by-name/userdata mmcblk0p87 ' \
             -e 's block/bootdevice/by-name/vendor mmcblk0p85 ' \
-
             "$@"
         ;;
         
