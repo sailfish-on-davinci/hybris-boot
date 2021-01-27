@@ -1387,6 +1387,21 @@ case "$DEVICE" in
             -e 's block/bootdevice/by-name/xblbak sdc2 ' \
             "$@"
         ;;
+    "ginkgo")
+        sed -i \
+            -e 's block/bootdevice/by-name/bluetooth mmcblk0p36 ' \
+            -e 's block/bootdevice/by-name/boot mmcblk0p72 ' \
+            -e 's block/bootdevice/by-name/cache mmcblk0p82 ' \
+            -e 's block/bootdevice/by-name/dsp mmcblk0p67 ' \
+            -e 's block/bootdevice/by-name/misc mmcblk0p38 ' \
+            -e 's block/bootdevice/by-name/modem mmcblk0p80 ' \
+            -e 's block/bootdevice/by-name/persist mmcblk0p69 ' \
+            -e 's block/bootdevice/by-name/system mmcblk0p86 ' \
+            -e 's block/bootdevice/by-name/userdata mmcblk0p87 ' \
+            -e 's block/bootdevice/by-name/vendor mmcblk0p85 ' \
+
+            "$@"
+        ;;
         
     *)
         cat <<EOF
