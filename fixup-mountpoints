@@ -14,6 +14,100 @@ shift
 echo "Fixing mount-points for device $DEVICE"
 
 case "$DEVICE" in
+    "pdx201")
+        sed -i \
+            -e 's block/bootdevice/by-name/LTALabel mmcblk0p3 ' \
+            -e 's block/bootdevice/by-name/TA mmcblk0p1 ' \
+            -e 's block/bootdevice/by-name/abl_a mmcblk0p16 ' \
+            -e 's block/bootdevice/by-name/abl_b mmcblk0p17 ' \
+            -e 's block/bootdevice/by-name/apdp mmcblk0p53 ' \
+            -e 's block/bootdevice/by-name/appslog mmcblk0p64 ' \
+            -e 's block/bootdevice/by-name/bluetooth_a mmcblk0p46 ' \
+            -e 's block/bootdevice/by-name/bluetooth_b mmcblk0p47 ' \
+            -e 's block/bootdevice/by-name/boot_a mmcblk0p42 ' \
+            -e 's block/bootdevice/by-name/boot_b mmcblk0p43 ' \
+            -e 's block/bootdevice/by-name/cmnlib64_a mmcblk0p22 ' \
+            -e 's block/bootdevice/by-name/cmnlib64_b mmcblk0p23 ' \
+            -e 's block/bootdevice/by-name/cmnlib_a mmcblk0p20 ' \
+            -e 's block/bootdevice/by-name/cmnlib_b mmcblk0p21 ' \
+            -e 's block/bootdevice/by-name/ddr mmcblk0p59 ' \
+            -e 's block/bootdevice/by-name/devcfg_a mmcblk0p24 ' \
+            -e 's block/bootdevice/by-name/devcfg_b mmcblk0p25 ' \
+            -e 's block/bootdevice/by-name/devinfo mmcblk0p52 ' \
+            -e 's block/bootdevice/by-name/diag mmcblk0p65 ' \
+            -e 's block/bootdevice/by-name/dsp_a mmcblk0p50 ' \
+            -e 's block/bootdevice/by-name/dsp_b mmcblk0p51 ' \
+            -e 's block/bootdevice/by-name/dtbo_a mmcblk0p79 ' \
+            -e 's block/bootdevice/by-name/dtbo_b mmcblk0p80 ' \
+            -e 's block/bootdevice/by-name/frp mmcblk0p61 ' \
+            -e 's block/bootdevice/by-name/fsc mmcblk0p38 ' \
+            -e 's block/bootdevice/by-name/fsg mmcblk0p41 ' \
+            -e 's block/bootdevice/by-name/hyp_a mmcblk0p14 ' \
+            -e 's block/bootdevice/by-name/hyp_b mmcblk0p15 ' \
+            -e 's block/bootdevice/by-name/imagefv_a mmcblk0p36 ' \
+            -e 's block/bootdevice/by-name/imagefv_b mmcblk0p37 ' \
+            -e 's block/bootdevice/by-name/keymaster_a mmcblk0p18 ' \
+            -e 's block/bootdevice/by-name/keymaster_b mmcblk0p19 ' \
+            -e 's block/bootdevice/by-name/keystore mmcblk0p63 ' \
+            -e 's block/bootdevice/by-name/limits mmcblk0p55 ' \
+            -e 's block/bootdevice/by-name/logdump mmcblk0p68 ' \
+            -e 's block/bootdevice/by-name/logfs mmcblk0p57 ' \
+            -e 's block/bootdevice/by-name/metadata mmcblk0p66 ' \
+            -e 's block/by-name/metadata mmcblk0p66 ' \
+            -e 's block/bootdevice/by-name/misc mmcblk0p62 ' \
+            -e 's block/bootdevice/by-name/modem_a mmcblk0p48 ' \
+            -e 's block/bootdevice/by-name/modem_b mmcblk0p49 ' \
+            -e 's block/bootdevice/by-name/modemst1 mmcblk0p39 ' \
+            -e 's block/bootdevice/by-name/modemst2 mmcblk0p40 ' \
+            -e 's block/bootdevice/by-name/multiimgoem_a mmcblk0p71 ' \
+            -e 's block/bootdevice/by-name/multiimgoem_b mmcblk0p72 ' \
+            -e 's block/bootdevice/by-name/multiimgqti_a mmcblk0p73 ' \
+            -e 's block/bootdevice/by-name/multiimgqti_b mmcblk0p74 ' \
+            -e 's block/bootdevice/by-name/oem_a mmcblk0p83 ' \
+            -e 's block/by-name/oem_a mmcblk0p83 ' \
+            -e 's block/bootdevice/by-name/oem_b mmcblk0p84 ' \
+            -e 's block/bootdevice/by-name/persist mmcblk0p2 ' \
+            -e 's block/bootdevice/by-name/qupfw_a mmcblk0p34 ' \
+            -e 's block/bootdevice/by-name/qupfw_b mmcblk0p35 ' \
+            -e 's block/bootdevice/by-name/rddata mmcblk0p87 ' \
+            -e 's block/bootdevice/by-name/rdimage_a mmcblk0p81 ' \
+            -e 's block/bootdevice/by-name/rdimage_b mmcblk0p82 ' \
+            -e 's block/bootdevice/by-name/recovery_a mmcblk0p44 ' \
+            -e 's block/bootdevice/by-name/recovery_b mmcblk0p45 ' \
+            -e 's block/bootdevice/by-name/rpm_a mmcblk0p12 ' \
+            -e 's block/bootdevice/by-name/rpm_b mmcblk0p13 ' \
+            -e 's block/bootdevice/by-name/secdata mmcblk0p69 ' \
+            -e 's block/bootdevice/by-name/splash mmcblk0p54 ' \
+            -e 's block/bootdevice/by-name/spunvm mmcblk0p67 ' \
+            -e 's block/bootdevice/by-name/ssd mmcblk0p60 ' \
+            -e 's block/bootdevice/by-name/storsec mmcblk0p58 ' \
+            -e 's block/bootdevice/by-name/super mmcblk0p85 ' \
+            -e 's block/bootdevice/by-name/toolsfv mmcblk0p56 ' \
+            -e 's block/bootdevice/by-name/tz_a mmcblk0p10 ' \
+            -e 's block/bootdevice/by-name/tz_b mmcblk0p11 ' \
+            -e 's block/bootdevice/by-name/tzxfl_a mmcblk0p30 ' \
+            -e 's block/bootdevice/by-name/tzxfl_b mmcblk0p31 ' \
+            -e 's block/bootdevice/by-name/tzxflattest_a mmcblk0p28 ' \
+            -e 's block/bootdevice/by-name/tzxflattest_b mmcblk0p29 ' \
+            -e 's block/bootdevice/by-name/uefisecapp_a mmcblk0p32 ' \
+            -e 's block/bootdevice/by-name/uefisecapp_b mmcblk0p33 ' \
+            -e 's block/bootdevice/by-name/uefivarstore mmcblk0p70 ' \
+            -e 's block/bootdevice/by-name/userdata mmcblk0p86 ' \
+            -e 's block/bootdevice/by-name/vbmeta_a mmcblk0p75 ' \
+            -e 's block/bootdevice/by-name/vbmeta_b mmcblk0p76 ' \
+            -e 's block/bootdevice/by-name/vbmeta_system_a mmcblk0p77 ' \
+            -e 's block/bootdevice/by-name/vbmeta_system_b mmcblk0p78 ' \
+            -e 's block/bootdevice/by-name/xbl_a mmcblk0p6 ' \
+            -e 's block/bootdevice/by-name/xbl_b mmcblk0p7 ' \
+            -e 's block/bootdevice/by-name/xbl_config_a mmcblk0p8 ' \
+            -e 's block/bootdevice/by-name/xbl_config_b mmcblk0p9 ' \
+            -e 's block/bootdevice/by-name/xfl_a mmcblk0p26 ' \
+            -e 's block/bootdevice/by-name/xfl_b mmcblk0p27 ' \
+            -e 's block/bootdevice/by-name/xflkeystore mmcblk0p4 ' \
+            -e 's block/bootdevice/by-name/xflkeystorebak mmcblk0p5 ' \
+            "$@"
+        ;;
+
     "kirin"|"mermaid")
         sed -i \
             -e 's block/bootdevice/by-name/LTALabel mmcblk0p7 ' \
@@ -241,6 +335,79 @@ case "$DEVICE" in
             -e 's block/bootdevice/by-name/xfl_b sda30 ' \
             -e 's block/bootdevice/by-name/xflkeystore sda3 ' \
             -e 's block/bootdevice/by-name/xflkeystorebak sda4 ' \
+            "$@"
+        ;;
+
+    "lilac")
+        sed -i \
+            -e 's block/bootdevice/by-name/FOTAKernel sda47 ' \
+            -e 's block/bootdevice/by-name/LTALabel sda2 ' \
+            -e 's block/bootdevice/by-name/Qnovo sda60 ' \
+            -e 's block/bootdevice/by-name/TA sda1 ' \
+            -e 's block/bootdevice/by-name/abl sda11 ' \
+            -e 's block/bootdevice/by-name/ablbak sda12 ' \
+            -e 's block/bootdevice/by-name/apdp sda40 ' \
+            -e 's block/bootdevice/by-name/appslog sda58 ' \
+            -e 's block/bootdevice/by-name/bluetooth sda39 ' \
+            -e 's block/bootdevice/by-name/boot sda38 ' \
+            -e 's block/bootdevice/by-name/cache sda53 ' \
+            -e 's block/bootdevice/by-name/cmnlib sda16 ' \
+            -e 's block/bootdevice/by-name/cmnlib64 sda18 ' \
+            -e 's block/bootdevice/by-name/cmnlib64bak sda19 ' \
+            -e 's block/bootdevice/by-name/cmnlibbak sda17 ' \
+            -e 's block/bootdevice/by-name/ddr sda48 ' \
+            -e 's block/bootdevice/by-name/devcfg sda21 ' \
+            -e 's block/bootdevice/by-name/devcfgbak sda22 ' \
+            -e 's block/bootdevice/by-name/devinfo sda13 ' \
+            -e 's block/bootdevice/by-name/diag sda59 ' \
+            -e 's block/bootdevice/by-name/dpo sda42 ' \
+            -e 's block/bootdevice/by-name/dsp sda37 ' \
+            -e 's block/bootdevice/by-name/frp sda56 ' \
+            -e 's block/bootdevice/by-name/fsc sda51 ' \
+            -e 's block/bootdevice/by-name/fsg sda34 ' \
+            -e 's block/bootdevice/by-name/fsmetadata sda61 ' \
+            -e 's block/bootdevice/by-name/hyp sda7 ' \
+            -e 's block/bootdevice/by-name/hypbak sda8 ' \
+            -e 's block/bootdevice/by-name/keymaster sda14 ' \
+            -e 's block/bootdevice/by-name/keymasterbak sda15 ' \
+            -e 's block/bootdevice/by-name/keystore sda55 ' \
+            -e 's block/bootdevice/by-name/limits sda44 ' \
+            -e 's block/bootdevice/by-name/logfs sda46 ' \
+            -e 's block/bootdevice/by-name/misc sda54 ' \
+            -e 's block/bootdevice/by-name/modem sda36 ' \
+            -e 's block/bootdevice/by-name/modemst1 sda49 ' \
+            -e 's block/bootdevice/by-name/modemst2 sda50 ' \
+            -e 's block/bootdevice/by-name/msadp sda41 ' \
+            -e 's block/bootdevice/by-name/oem sda63 ' \
+            -e 's block/bootdevice/by-name/persist sda33 ' \
+            -e 's block/bootdevice/by-name/pmic sda9 ' \
+            -e 's block/bootdevice/by-name/pmicbak sda10 ' \
+            -e 's block/bootdevice/by-name/rdimage sda62 ' \
+            -e 's block/bootdevice/by-name/rpm sda3 ' \
+            -e 's block/bootdevice/by-name/rpmbak sda4 ' \
+            -e 's block/bootdevice/by-name/sec sda35 ' \
+            -e 's block/bootdevice/by-name/splash sda43 ' \
+            -e 's block/bootdevice/by-name/ssd sda52 ' \
+            -e 's block/bootdevice/by-name/sti sda20 ' \
+            -e 's block/bootdevice/by-name/storsec sda23 ' \
+            -e 's block/bootdevice/by-name/storsecbak sda24 ' \
+            -e 's block/bootdevice/by-name/system sda65 ' \
+            -e 's block/bootdevice/by-name/toolsfv sda45 ' \
+            -e 's block/bootdevice/by-name/tz sda5 ' \
+            -e 's block/bootdevice/by-name/tzbak sda6 ' \
+            -e 's block/bootdevice/by-name/tzxfl sda29 ' \
+            -e 's block/bootdevice/by-name/tzxflattest sda27 ' \
+            -e 's block/bootdevice/by-name/tzxflattestbak sda28 ' \
+            -e 's block/bootdevice/by-name/tzxflbak sda30 ' \
+            -e 's block/bootdevice/by-name/userdata sda66 ' \
+            -e 's block/bootdevice/by-name/vbmeta sda57 ' \
+            -e 's block/bootdevice/by-name/vendor sda64 ' \
+            -e 's block/bootdevice/by-name/xbl sdb1 ' \
+            -e 's block/bootdevice/by-name/xblbak sdc1 ' \
+            -e 's block/bootdevice/by-name/xfl sda25 ' \
+            -e 's block/bootdevice/by-name/xflbak sda26 ' \
+            -e 's block/bootdevice/by-name/xflkeystore sda31 ' \
+            -e 's block/bootdevice/by-name/xflkeystorebak sda32 ' \
             "$@"
         ;;
 
@@ -807,6 +974,22 @@ case "$DEVICE" in
             -e 's block/bootdevice/by-name/vendor sdf6 ' \
             -e 's block/bootdevice/by-name/xbl sdb1 ' \
             -e 's block/bootdevice/by-name/xblbak sdc1 ' \
+            "$@"
+        ;;
+        
+        "enchilada" | "fajita")
+        sed -i \
+            -e 's block/bootdevice/by-name/bluetooth sde5 ' \
+            -e 's block/bootdevice/by-name/boot sde11 ' \
+            -e 's block/bootdevice/by-name/dsp sde9 ' \
+            -e 's block/bootdevice/by-name/misc sda3 ' \
+            -e 's block/bootdevice/by-name/modem sde4 ' \
+            -e 's block/bootdevice/by-name/odm sda15 ' \
+            -e 's block/bootdevice/by-name/persist sda2 ' \
+            -e 's block/bootdevice/by-name/system sda13 ' \
+            -e 's block/bootdevice/by-name/userdata sda17 ' \
+            -e 's block/bootdevice/by-name/vbmeta sde17 ' \
+            -e 's block/bootdevice/by-name/vendor sde16 ' \
             "$@"
         ;;
 
@@ -1402,6 +1585,160 @@ case "$DEVICE" in
             "$@"
         ;;
         
+
+    "walleye")
+        sed -i \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/abl_a sda8 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/abl_b sda29 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/apdp_a sda14 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/apdp_b sda35 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/board_info sdf1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/boot_a sda9 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/boot_b sda30 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cdt sdd5 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cmdlib64_a sda13 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cmdlib64_b sda34 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cmdlib_a sda12 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cmdlib_b sda33 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/ddr sdd6 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/devcfg_a sda16 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/devcfg_b sda37 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/devinfo sdf4 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/dip sdd8 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/dpo sdd9 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/dtbo_a sda21 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/dtbo_b sda42 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/frp sdd4 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/fsc sdd17 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/fsg sdf3 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/hosd_a sda10 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/hosd_b sda31 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/hyp_a sda5 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/hyp_b sda26 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/keymaster_a sda11 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/keymaster_b sda32 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/limits sdd11 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/lockbooter_a sda2 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/lockbooter_b sda23 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/logfs sdd13 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/metadata sde4 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/mfg sdf2 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/misc sdd1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/modem_a sda7 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/modem_b sda28 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/modemst1 sdd15 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/modemst2 sdd16 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/msadp_a sda15 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/msadp_b sda36 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/padding0 sda1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/padding1 sda44 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/persist sdd3 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/pg1fs sde2 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/pg2fs sde3 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/pmic_a sda6 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/pmic_b sda27 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/ramdump sde1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/reserve3 sdd18 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/reserve4 sde5 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/reserve5 sdf5 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/rpm_a sda3 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/rpm_b sda24 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sec sdd7 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/splash sdd10 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/ssd sdd2 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sti sdd14 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/storesec_a sda17 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/storesec_b sda38 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/system_a sda22' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/system_b sda43 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/toolsfv sdd12 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/trusty_a sda19 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/trusty_b sda40 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/tz_a sda4 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/tz_b sda25 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/userdata sda45 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/vbmeta_a sda18 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/vbmeta_b sda39 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/vendor_a sda20 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/vendor_b sda41 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/xbl_a sdb1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/xbl_b sdc1 ' \
+            "$@"
+        ;;
+
+    "taimen")
+        sed -i \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/abl_a sde6 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/abl_b sde20 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/aes_a sda10 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/aes_b sda11 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/align_parti sda12 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/apdp sde29 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/boot_a sde8 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/boot_b sde22 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cdt sdd1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cmdlib64_a sde10 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cmdlib64_b sde24 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cmdlib_a sde9 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/cmdlib_b sde23 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/ddr sdd2 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/devcfg_a sde11 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/devcfg_b sde25 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/devinfo sde34 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/dip sde35 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/dpo sde36 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/dtbo_a sde13 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/dtbo_b sde27 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/frp sdg1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/fsc sdf3 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/fsg sde32 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/ftm sda6 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/hyp_a sde3 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/hyp_b sde17 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/keymaster_a sde7 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/keymaster_b sde21 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/laf_a sda1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/laf_b sda2 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/limits sde37 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/logfs sde39 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/metadata sde41 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/misc sda5 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/modem_a sde5 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/modem_b sde19 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/modemst1 sdf1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/modemst2 sdf2 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/msadp sde30 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/persist sda4 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/pmic_a sde4 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/pmic_b sde18 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/pstore sda9 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/rpm_a sde1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/rpm_b sde15 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sda sda ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sdb sdb ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sdc sdc ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sdd sdd ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sde sde ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sdf sdf ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sdg sdg ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sec sde33 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/ssd sda3 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/sti sde40 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/storesec sde31 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/system_a sda7 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/system_b sda8 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/toolsfv sde38 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/tz_a sde2 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/tz_b sde16 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/userdata sda13 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/vbmeta_a sde12 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/vbmeta_b sde26 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/vendor_a sde14 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/vendor_b sde28 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/xbl_a sdb1 ' \
+            -e 's block/platform/soc/1da4000.ufshc/by-name/xbl_b sdc1 ' \
+            "$@"
+        ;;
     *)
         cat <<EOF
 
